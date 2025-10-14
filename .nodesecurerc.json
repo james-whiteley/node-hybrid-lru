@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/NodeSecure/cli/main/schemas/nodesecure.schema.json",
+  "strategy": "npm",
+  "path": ".",
+  "fullScan": true,
+  "includeDev": true,
+  "vulnerabilityScan": true,
+  "license": {
+    "enabled": true,
+    "allow": ["MIT", "Apache-2.0", "ISC"],
+    "deny": ["GPL-3.0", "AGPL-3.0"]
+  },
+  "staticAnalysis": true,
+  "warnings": {
+    "enabled": true,
+    "types": [
+      "unsafe-regex",
+      "obfuscated-code",
+      "encoded-literal",
+      "http-import",
+      "base64",
+      "dynamic-import",
+      "eval",
+      "exec",
+      "child-process"
+    ]
+  },
+  "severity": "medium",
+  "ignore": ["left-pad", "event-stream"],
+  "output": {
+    "formats": ["json", "html", "console"],
+    "directory": "./security-reports"
+  },
+  "offline": false,
+  "outdated": true,
+  "cache": true,
+  "display": {
+    "progress": true,
+    "summary": true,
+    "dependencies": true,
+    "warnings": true,
+    "licenses": true
+  },
+  "metadata": true
+}

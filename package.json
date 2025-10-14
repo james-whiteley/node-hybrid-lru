@@ -1,0 +1,36 @@
+{
+  "name": "@james-whiteley/hybrid-lru",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "security": "nsecure cwd",
+    "lint": "eslint",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+    "test:coverage": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest --coverage",
+    "build": "npm run lint && tsc && terser dist/index.js -o dist/index.js --compress ecma=2020,passes=3,unsafe,unsafe_arrows,unsafe_comps,unsafe_math,pure_getters=true,reduce_funcs,reduce_vars --mangle toplevel --comments false"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nodesecure/cli": "^3.1.0",
+    "@rushstack/eslint-plugin-security": "^0.13.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^24.7.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.1",
+    "eslint": "^9.37.0",
+    "eslint-plugin-security": "^3.0.1",
+    "jest": "^30.2.0",
+    "terser": "^5.44.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
+}
